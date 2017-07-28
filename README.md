@@ -30,3 +30,27 @@ I'm utilizing React Redux for the user interface and state management. I have ot
 - [ ] Add varied enemy attacks and intelligently apply them
 - [ ] Add loot drops that _feel amazing_
 - [ ] Make the experience mildly fun
+
+#### Installation
+
+From Bash:
+
+`git clone git@github.com:mjtischler/totkrieger.git`
+
+`cd totkrieger`
+
+`git pull origin develop`
+
+`npm install`
+
+`npm run start`
+
+In your browser, navigate to `http://localhost:3000/`
+
+To lint using Standard:
+
+`npm run lint` (NOTE: This and `npm run lint-fix` will produce an error but still function properly)
+
+To autofix linter issues with Standard:
+
+`npm run lint-fix`
