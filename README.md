@@ -1,6 +1,6 @@
 ## Totkrieger
 ### A terrible game
-
+<br>
 Hey y'all, I'm making a game! It's going to be bad so you shouldn't play it. As of this README, I have little design direction and I'm mostly using this as an excuse to build a full-stack application from the ground up.
 
 #### Technology
