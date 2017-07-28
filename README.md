@@ -21,11 +21,11 @@ I'm utilizing React Redux for the user interface and state management. I have ot
 - [x] Randomly choose an enemy from a list of available enemies
 - [x] Perform a round of attacks utilizing armor and attack modifiers
 - [x] Reduce combatant hit points based on the results of the attack round
+- [x] Mark an unmodified random roll of `1` as a critical miss and apply damage to the attacker
 - [x] Declare when a battle is over and disable further interaction
 - [ ] Incorporate rudimentary graphics
 - [ ] Build an attack grid for multiple combatants
 - [ ] Allow users to customize their player character
-- [ ] Build an attack grid for multiple combatants
 - [ ] Allow users to choose their attack type
 - [ ] Add varied enemy attacks and intelligently apply them
 - [ ] Add loot drops that _feel amazing_
