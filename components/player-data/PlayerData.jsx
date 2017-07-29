@@ -14,6 +14,6 @@ class Player {
   }
 }
 
-let playerStatus = new Player()
+const playerStatus = new Player()
 
 export default playerStatus

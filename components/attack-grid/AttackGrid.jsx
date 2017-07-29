@@ -1,27 +1,27 @@
 // MT: todo: Implement an attack grid (maybe)
-import React from 'react'
-import { connect } from 'react-redux'
+// import React from 'react'
+// import { connect } from 'react-redux'
 
-var attackGrid = {
+const attackGrid = {
   columns: 0,
   rows: 0
 }
 
 determineColumns()
-determineRows(attackGrid)
+determineRows()
 
 function determineColumns () {
-  var max = 6
-  var min = 3
-  var columns = Math.floor(Math.random() * (max - min) + min)
+  const max = 6
+  const min = 3
+  const columns = Math.floor(Math.random() * (max - min) + min)
 
   attackGrid.columns = columns
 }
 
-function determineRows (attackGrid) {
-  var max = attackGrid.columns + 1
-  var min = attackGrid.columns
-  var rows = Math.floor(Math.random() * (max - min) + min)
+function determineRows () {
+  const max = attackGrid.columns + 1
+  const min = attackGrid.columns
+  const rows = Math.floor(Math.random() * (max - min) + min)
 
   attackGrid.rows = rows
 }

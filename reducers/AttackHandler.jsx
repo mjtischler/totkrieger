@@ -8,7 +8,7 @@ const battleEndedMessage = 'The battle is over!'
 export default (state = Immutable.List(['A ' + EnemyData.name + ' attacks!']), action) => {
   switch (action.type) {
     case 'playerAttack':
-      let playerAttack = attack(PlayerData, EnemyData)
+      const playerAttack = attack(PlayerData, EnemyData)
 
       if (CharacterState(EnemyData)) {
         return state.unshift(
@@ -20,7 +20,7 @@ export default (state = Immutable.List(['A ' + EnemyData.name + ' attacks!']), a
                 )
       }
     case 'enemyAttack':
-      let enemyAttack = attack(EnemyData, PlayerData)
+      const enemyAttack = attack(EnemyData, PlayerData)
 
       if (CharacterState(PlayerData)) {
         return state.unshift(
@@ -44,11 +44,11 @@ export default (state = Immutable.List(['A ' + EnemyData.name + ' attacks!']), a
 }
 
 function attack (attacker, victim) {
-  let attackRoll = Math.floor(Math.random() * (20 - 1 + 1)) + 1
-  let attackOutcome = attackRoll + attacker.attackModifier
+  const attackRoll = Math.floor(Math.random() * (20 - 1 + 1)) + 1
+  const attackOutcome = attackRoll + attacker.attackModifier
 
   if (attackRoll === 1) {
-    let criticalMissDamage = doDamage(attacker, victim, true)
+    const criticalMissDamage = doDamage(attacker, victim, true)
 
     return criticalMissDamage
   } else if (attackOutcome >= victim.armorModifier) {
@@ -59,14 +59,14 @@ function attack (attacker, victim) {
 }
 
 function doDamage (attacker, victim, isCriticalMiss) {
-  let max = attacker.maxAttack
-  let min = attacker.minAttack
-  let damage = Math.floor(Math.random() * (max - min) + min)
-  let damageMessage = attacker.name + ' hits ' + victim.name + ' with ' + attacker.attackType + ' for ' + damage + ' damage!'
+  const max = attacker.maxAttack
+  const min = attacker.minAttack
+  const damage = Math.floor(Math.random() * (max - min) + min)
+  const damageMessage = attacker.name + ' hits ' + victim.name + ' with ' + attacker.attackType + ' for ' + damage + ' damage!'
 
   if (isCriticalMiss) {
     attacker.hitPoints = attacker.hitPoints - damage
-    let criticalMissMessage = 'CRITICAL MISS! ' + attacker.name + ' hit itself for ' + damage + ' damage!'
+    const criticalMissMessage = 'CRITICAL MISS! ' + attacker.name + ' hit itself for ' + damage + ' damage!'
 
     if (!CharacterState(attacker)) {
       return criticalMissMessage

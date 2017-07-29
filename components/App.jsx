@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import store from '../store'
 import EncounterHandler from './EncounterHandler'
 
-let reactElement = document.getElementById('react')
+const reactElement = document.getElementById('react')
 
 render(
   <Provider store={store}>
