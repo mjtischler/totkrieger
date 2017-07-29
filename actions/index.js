@@ -1,21 +1,21 @@
-export function playerAttack (playerAttack) {
+export function playerAttack (attack) {
   return {
     type: 'playerAttack',
-    playerAttack
+    attack
   }
 }
 
-export function enemyAttack (enemyAttack) {
+export function enemyAttack (attack) {
   return {
     type: 'enemyAttack',
-    enemyAttack
+    attack
   }
 }
 
-export function battleCompleted (battleCompleted) {
+export function battleCompleted (attack) {
   return {
     type: 'battleCompleted',
-    battleCompleted
+    attack
   }
 }
 

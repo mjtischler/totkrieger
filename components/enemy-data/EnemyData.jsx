@@ -16,10 +16,10 @@ class Enemy {
   }
 }
 
-let enemyStatus = new Enemy(getEnemyType())
+const enemyStatus = new Enemy(getEnemyType())
 
 function getEnemyType () {
-  var enemy = EnemyTypes[Math.floor(Math.random() * EnemyTypes.length)]
+  const enemy = EnemyTypes[Math.floor(Math.random() * EnemyTypes.length)]
   return enemy
 }
 
