@@ -9,6 +9,7 @@ class Player {
     this.minAttack = 1
     this.attackType = 'Viscious Stab'
     this.attackModifier = 3
+    this.statusMessage = ''
     this.armorModifier = 10
     this.dead = false
   }
