@@ -54,6 +54,8 @@ function attack (attacker, victim) {
   } else if (attackOutcome >= victim.armorModifier) {
     return doDamage(attacker, victim)
   } else {
+    attacker.statusMessage = attacker.name + ' ' + 'misses!'
+
     return attacker.name + ' misses!'
   }
 }
@@ -69,12 +71,17 @@ function doDamage (attacker, victim, isCriticalMiss) {
     const criticalMissMessage = 'CRITICAL MISS! ' + attacker.name + ' hit itself for ' + damage + ' damage!'
 
     if (!CharacterState(attacker)) {
+      attacker.statusMessage = criticalMissMessage
+
       return criticalMissMessage
     } else {
+      attacker.statusMessage = criticalMissMessage
+
       return criticalMissMessage + ' ' + CharacterState(attacker)
     }
   } else {
     victim.hitPoints = victim.hitPoints - damage
+    attacker.statusMessage = damageMessage
 
     if (!CharacterState(victim)) {
       return damageMessage

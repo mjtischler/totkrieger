@@ -11,6 +11,7 @@ class Enemy {
     this.minAttack = enemyType.minAttack
     this.attackType = enemyType.attackType
     this.attackModifier = enemyType.attackModifier
+    this.statusMessage = ''
     this.armorModifier = enemyType.armorModifier
     this.dead = false
   }
