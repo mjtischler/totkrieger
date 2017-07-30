@@ -5,56 +5,53 @@ import PropTypes from 'prop-types'
 import PlayerData from './player-data/PlayerData'
 import EnemyData from './enemy-data/EnemyData'
 
-const EnemyBackground = '/assets/cards/enemy-cards/empty-enemy.png'
-const PlayerBackground = '/assets/cards/player-cards/empty-player.png'
-
 const CardContainer = {
   display: 'flex',
   flexDirection: 'row'
 }
 
 const Card = {
-  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  alignItems: 'center',
   width: '308px',
-  height: '454px'
+  height: '454px',
+  padding: '10px',
+  borderRadius: '3px',
+  boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)'
 }
 
 const BattleCompletedMessage = {
-  position: 'absolute',
-  top: '37%',
-  width: '100%',
+  alignSelf: 'center',
+  height: '25%',
   color: '#fff',
   fontSize: '40px',
   textAlign: 'center'
 }
 
-const AttackButton = {
-  position: 'absolute',
-  top: '54%',
-  width: '100%',
+const AttackContainer = {
+  alignSelf: 'center',
   color: '#fff',
-  fontSize: '40px',
+  fontSize: '18px',
   textAlign: 'center'
 }
 
 const EnemyCard = {
-  backgroundImage: `url(${EnemyBackground})`
+  backgroundColor: '#7b4a00'
 }
 
-const EnemyStats = {
-  position: 'absolute',
-  width: '100%',
-  top: '72%',
+const CharacterStats = {
+  alignSelf: 'center',
+  height: '30%',
   textAlign: 'center',
   fontSize: '28px',
   color: '#fff'
 }
 
 const CharacterName = {
-  position: 'absolute',
-  width: '100%',
-  top: '3.5%',
-  textAlign: 'center',
+  alignSelf: 'center',
+  height: '25%',
   fontSize: '32px',
   color: '#fff'
 }
@@ -67,21 +64,10 @@ const VersusText = {
 }
 
 const PlayerCard = {
-  backgroundImage: `url(${PlayerBackground})`
-}
-
-const PlayerStats = {
-  position: 'absolute',
-  width: '100%',
-  top: '72%',
-  textAlign: 'center',
-  fontSize: '28px',
-  color: '#fff'
+  backgroundColor: '#003763'
 }
 
 const AttackMessage = {
-  padding: '10px',
-  textAlign: 'center',
   fontSize: '22px'
 }
 
@@ -94,17 +80,19 @@ const NewEncounter = ({ onClick }) => (
           {PlayerData.name}
         </div>
 
-        {PlayerData.dead &&
         <div style={BattleCompletedMessage}>
-          YOU DIED
+          {PlayerData.dead &&
+            <span>
+              YOU DIED
+            </span>
+            }
         </div>
-        }
 
-        <div style={AttackButton}>
+        <div style={AttackContainer}>
           <input id='attackButton' type='button' value='Viscious Stab' onClick={onClick} />
         </div>
 
-        <div style={PlayerStats}>
+        <div style={CharacterStats}>
           Will to live: {PlayerData.hitPoints}
           <br />
           <span style={AttackMessage}>
@@ -122,13 +110,19 @@ const NewEncounter = ({ onClick }) => (
           {EnemyData.name}
         </div>
 
-        {EnemyData.dead &&
         <div style={BattleCompletedMessage}>
-          DEAD!
+          {EnemyData.dead &&
+            <span>
+              DEAD!
+            </span>
+            }
         </div>
-        }
 
-        <div style={EnemyStats}>
+        <div style={AttackContainer}>
+          {EnemyData.attackType}
+        </div>
+
+        <div style={CharacterStats}>
           Will to live: {EnemyData.hitPoints}
           <br />
           <span style={AttackMessage}>
